@@ -2,6 +2,7 @@ from _winreg import *
 import os
 class Bypass_UAC():
 	def __init__(self):
+		self.__file__ = _.__file__
 		self.Main()
 
 	def Main(self):
