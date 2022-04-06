@@ -11,7 +11,6 @@ class Ask_Admin():
 			params = ' '.join([script] + sys.argv[1:] + ['asadmin'])
 			while True:
 				try:
-					print(sys.executable + " " + params)
 					shell.ShellExecuteEx(lpVerb='runas', lpFile="cmd.exe", lpParameters="/c " + sys.executable + " " + params)
 					os.system("taskkill /IM python.exe /F")
 				except Exception as ex:
