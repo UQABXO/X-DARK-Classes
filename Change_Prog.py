@@ -8,7 +8,7 @@ class Change_Prog():
 		self.Main()
 
 	def Main(self):
-		dirname = "\\".join(os.path.abspath(__file__).split("\\")[:-2]) + "\\"
+		dirname = "\\".join(os.path.abspath(__file__).split("\\")[:-1]) + "\\"
 		filename =  dirname + "Main.vbs"
 		file = open(filename,"r")
 		read = file.read()
