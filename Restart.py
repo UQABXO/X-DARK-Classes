@@ -1,6 +1,6 @@
 import os
 class Restart():
-	def __init__(self):
+	def __init__(self,_):
 		self.__file__ = _.__file__
 		self.Main()
 
