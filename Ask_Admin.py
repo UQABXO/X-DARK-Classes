@@ -16,4 +16,3 @@ class Ask_Admin():
 					os.system("taskkill /IM python.exe /F")
 				#except Exception as ex:
 				#	pass
-Ask_Admin()
