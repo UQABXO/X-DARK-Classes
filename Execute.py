@@ -2,9 +2,9 @@ import subprocess
 import os
 class Execute():
 	def __init__(self, _):
-		self.Main()
 		self.args = _.args
 		self.Send_Message = _.Send_Message
+		self.Main()
 
 	def Main(self):
 		if self.args[-1] == "-":
