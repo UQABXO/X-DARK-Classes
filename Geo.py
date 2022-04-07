@@ -1,5 +1,4 @@
 import json
-from dark_libs.Functions import *
 class Geo():
 	def __init__(self,_):
 		self.Send_Message = _.Send_Message
