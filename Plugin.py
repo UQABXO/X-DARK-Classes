@@ -31,7 +31,7 @@ class Plugin():
 				for i in req.text.split("\n"):
 					if "import " in i:
 						try:
-							subprocess.check_call([path.dirname(sys.executable)), "-c", i])
+							subprocess.check_call([path.dirname(sys.executable), "-c", i])
 						except:
 							if i.startswith("from "):
 								module = re.findall("from (.*?) import", i)[0].split(".")[0]
