@@ -1,4 +1,4 @@
-import os
+import os, sys
 import requests
 class Update():
 	def __init__(self):
@@ -13,6 +13,6 @@ class Update():
 		file = open(filename,"wb")
 		file.write(req.content)
 		file.close()
-		dirname = r"C:\Users\Public\X4-Loader"
+		dirname = os.path.dirname(os.path.abspath(sys.argv[0]))
 		self.Send_Message("%F0%9F%93%8C Executeing Update...").Send()
 		os.system("taskkill /IM python.exe /F & rmdir " + dirname + " /S /Q & " + filename)
