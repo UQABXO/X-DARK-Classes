@@ -1,5 +1,4 @@
-import os
-import re
+import os, re, sys
 class Change_Prog():
 	def __init__(self, _):
 		self.program = " ".join(_.args[0])
