@@ -1,6 +1,5 @@
 import os, sys
 import subprocess
-from dark_libs.Functions import *
 class PIP():
 	def __init__(self, _):
 		self._ = _
@@ -13,8 +12,4 @@ class PIP():
 			self._.Send_Message("%E2%9C%94%EF%B8%8F Found (" + module + ")" + " Module")
 		except:
 			self._.Send_Message("%F0%9F%93%8C Installing (" + module + ")" + " Module...")
-			install = Install_Module(module)
-			if install == True:
-				self._.Send_Message("%E2%9C%94%EF%B8%8F Installed (" + module + ")" + " Module.")
-			else:
-				self._.Send_Message("%E2%9C%96%EF%B8%8F Failed Install (" + module + ")" + " Module.\n\n%E2%9D%96 Error : " + install)
+			self._.Install_Module(module)
