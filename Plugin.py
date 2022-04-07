@@ -17,7 +17,7 @@ class Plugin():
 			file = tempfile.TemporaryFile()
 			filename = file.name + "." + self.plugins[self.plugin]["Extention"]
 			file.close()
-			req = requests.get(url)
+			req = _.Request(url)
 			file = open(filename, "w")
 			file.write(req.content)
 			file.close()
