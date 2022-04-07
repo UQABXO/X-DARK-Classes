@@ -16,7 +16,6 @@ def Split_Array(arr, size):
 	return arrs
 
 def Install_Module(module):
-	print("[*] Installing " + module + " Module...")
 	json = {
 		'win32com' : 'pywin32',
 		'win32gui' : 'pywin32',
