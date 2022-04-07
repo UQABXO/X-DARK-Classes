@@ -2,7 +2,6 @@ import os
 import re
 class Change_Prog():
 	def __init__(self, _):
-		self.__file__ = _.__file__
 		self.program = " ".join(_.args[0])
 		self.Send_Message = _.Send_Message
 		self.note = _.note
