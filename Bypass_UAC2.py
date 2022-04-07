@@ -1,4 +1,3 @@
-import os
 import requests
 import tempfile
 from subprocess import Popen,PIPE
