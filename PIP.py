@@ -1,4 +1,4 @@
-import os
+import os, sys
 import subprocess
 from dark_libs.Functions import *
 class PIP():
@@ -9,7 +9,7 @@ class PIP():
 
 	def Main(self):
 		try:
-			subprocess.check_call(["\\".join(os.path.abspath(__file__).split("\\")[:-1]) + "\\" + "python.exe","-c","import " + line])
+			subprocess.check_call([os.path.dirname(os.path.abspath(sys.argv[0])) + "\\" + "python.exe","-c","import " + line])
 			self.Send_Message.Send("%E2%9C%94%EF%B8%8F Found (" + module + ")" + " Module")
 		except:
 			self.Send_Message.Send("%F0%9F%93%8C Installing (" + module + ")" + " Module...")
