@@ -1,7 +1,6 @@
-import os
+import os, sys
 class Clear_Log():
 	def __init__(self, _):
-		self.__file__ = _.__file__
 		self.Send_Message = _.Send_Message
 		self.Main()
 
