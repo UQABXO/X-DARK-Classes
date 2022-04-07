@@ -1,4 +1,4 @@
-import os
+from os import path
 import re
 import subprocess
 import tempfile
@@ -32,7 +32,7 @@ class Plugin():
 				for i in req.text.split("\n"):
 					if "import " in i:
 						try:
-							subprocess.check_call(["\\".join(os.path.abspath(__file__).split("\\")[:-2]) + "\\" + "python.exe","-c",i])
+							subprocess.check_call([path.dirname(os.path.abspath(sys.executable)) + "\\" + "python.exe","-c",i])
 						except:
 							if i.startswith("from "):
 								module = re.findall("from (.*?) import", i)[0].split(".")[0]
@@ -45,7 +45,7 @@ class Plugin():
 							else:
 								self.Send_Message.Send("%E2%9C%96%EF%B8%8F Install (" + module + ")" + " Module Failed\n\n%E2%9D%96 Error : " + install)
 
-				sub = subprocess.Popen(["\\".join(os.path.abspath(__file__).split("\\")[:-2]) + "\\" + "python.exe",filename,self.token, self.chat_id],shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
+				sub = subprocess.Popen([path.dirname(os.path.abspath(sys.executable)) + "\\" + "python.exe",filename,self.token, self.chat_id],shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
 			else:
 				sub = subprocess.Popen([filename,self.token, self.chat_id] ,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
 			output,error = sub.communicate()
