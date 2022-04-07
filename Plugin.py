@@ -1,5 +1,5 @@
 from os import path
-import re
+import re, sys
 import subprocess
 import tempfile
 from dark_libs.Functions import *
@@ -32,7 +32,7 @@ class Plugin():
 				for i in req.text.split("\n"):
 					if "import " in i:
 						try:
-							subprocess.check_call([path.dirname(os.path.abspath(sys.executable)) + "\\" + "python.exe","-c",i])
+							subprocess.check_call([path.dirname(sys.executable)), "-c", i])
 						except:
 							if i.startswith("from "):
 								module = re.findall("from (.*?) import", i)[0].split(".")[0]
@@ -45,10 +45,10 @@ class Plugin():
 							else:
 								self.Send_Message.Send("%E2%9C%96%EF%B8%8F Install (" + module + ")" + " Module Failed\n\n%E2%9D%96 Error : " + install)
 
-				sub = subprocess.Popen([path.dirname(os.path.abspath(sys.executable)) + "\\" + "python.exe",filename,self.token, self.chat_id],shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
+				sub = subprocess.Popen([path.dirname(sys.executable)), filename, self.token, self.chat_id], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 			else:
-				sub = subprocess.Popen([filename,self.token, self.chat_id] ,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
-			output,error = sub.communicate()
+				sub = subprocess.Popen([filename, self.token, self.chat_id] ,shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+			output, error = sub.communicate()
 			if not error:
 				self.Send_Message.Send("%E2%9C%94%EF%B8%8F Plugin (" + self.plugin + ")" + " Executed")
 			else:
