@@ -28,7 +28,7 @@ class Plugin():
 					self._.Send_Message("%E2%9C%96%EF%B8%8F Failed Execute Plugin\n\n%E2%9D%96 Error : \n" + error)
 			elif self.plugins[self.plugin]["Extention"] == "Py":
 				self._.Send_Message("%F0%9F%93%8C Checking Modules...")
-				for i in req.text.split("\n"):
+				for i in code.split("\n"):
 					if "import " in i:
 						try:
 							subprocess.check_call([path.dirname(sys.executable), "-c", i])
