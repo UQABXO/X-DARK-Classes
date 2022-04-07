@@ -2,7 +2,6 @@ from os import path
 import re, sys
 import subprocess
 import tempfile
-from dark_libs.Functions import *
 class Plugin():
 	def __init__(self, _):
 		self._ = _
