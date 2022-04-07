@@ -5,7 +5,6 @@ class PIP():
 	def __init__(self, _):
 		self._ = _
 		self.module = _.args[0]
-		self.Send_Message = _.Send_Message
 		self.Main()
 
 	def Main(self):
