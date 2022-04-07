@@ -2,13 +2,14 @@ import os
 import re
 class Change_Prog():
 	def __init__(self, _):
+		self.__file__ = _.__file__
 		self.program = " ".join(_.args[0])
 		self.Send_Message = _.Send_Message
 		self.note = _.note
 		self.Main()
 
 	def Main(self):
-		dirname = "\\".join(os.path.abspath(__file__).split("\\")[:-1]) + "\\"
+		dirname = "\\".join(os.path.abspath(self.__file__).split("\\")[:-1]) + "\\"
 		filename =  dirname + "Main.vbs"
 		file = open(filename,"r")
 		read = file.read()
