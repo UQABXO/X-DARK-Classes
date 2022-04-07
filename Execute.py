@@ -2,6 +2,7 @@ import subprocess
 import os
 class Execute():
 	def __init__(self, _):
+		self._ = _
 		self.args = _.args
 		self.Send_Message = _.Send_Message
 		self.Main()
@@ -17,7 +18,7 @@ class Execute():
 			if len(self.args) != 0:
 				os.chdir(" ".join(self.args))
 				result = "%E2%9C%94%EF%B8%8F Command Executed Successfully"
-				self.Send_Message.Send(result)
+				self._.Send_Message(result)
 		cmd = " ".join(self.args)
 		sub = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
 		if wait == True:
@@ -25,14 +26,14 @@ class Execute():
 			if error:
 				result = "%F0%9F%96%A5 Command Error : \n"
 				result += error
-				self.Send_Message.Send(result)
+				self._.Send_Message(result)
 			if output:
 				result = "%F0%9F%96%A5 Command Output : \n"
 				result += output
-				self.Send_Message.Send(result)
+				self._.Send_Message(result)
 			else:
 				result = "%E2%9C%94%EF%B8%8F Command Executed Successfully"
-				self.Send_Message.Send(result)
+				self._.Send_Message(result)
 		else:
 			result = "%E2%9C%94%EF%B8%8F Command Executed Successfully"
-			self.Send_Message.Send(result)
+			self._.Send_Message(result)
