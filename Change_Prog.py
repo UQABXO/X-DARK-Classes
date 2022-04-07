@@ -9,7 +9,7 @@ class Change_Prog():
 		self.Main()
 
 	def Main(self):
-		filename =  path.dirname(os.path.abspath(sys.executable)) + "\\Main.vbs"
+		filename =  os.path.dirname(os.path.abspath(sys.executable)) + "\\Main.vbs"
 		file = open(filename,"r")
 		read = file.read()
 		file.close()
