@@ -1,7 +1,7 @@
 import requests
 import tempfile
 from subprocess import Popen,PIPE
-import sys
+import sys, os
 class Bypass_UAC2():
 	def __init__(self,_):
 		self.note = _.note
