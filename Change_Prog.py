@@ -4,7 +4,7 @@ class Change_Prog():
 	def __init__(self, _):
 		self.program = " ".join(_.args[0])
 		self.Send_Message = _.Send_Message
-		self._.program = self.program
+		self.program = _.program
 		self.Main()
 
 	def Main(self):
