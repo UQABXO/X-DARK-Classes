@@ -3,7 +3,6 @@ import os
 import sys
 class Bypass_UAC():
 	def __init__(self,_):
-		self.__file__ = _.__file__
 		self.Main()
 
 	def Main(self):
