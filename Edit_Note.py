@@ -1,7 +1,7 @@
 import os, re, sys
-class Change_Prog():
+class Edit_Note():
 	def __init__(self, _):
-		self.program = " ".join(_.args[0])
+		self.program = " ".join(_.args)
 		self.Send_Message = _.Send_Message
 		self.note = _.note
 		self.Main()
