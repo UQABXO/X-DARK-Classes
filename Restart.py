@@ -1,9 +1,8 @@
-import os
+import os, sys
 class Restart():
 	def __init__(self,_):
-		self.__file__ = _.__file__
 		self.Main()
 
 	def Main(self):
-		filename = "\\".join(os.path.abspath(_.__file__).split("\\")[:-1]) + "\\Main.vbs"
+		filename = os.path.dirname(os.path.abspath(sys.argv[0])) + "\\Main.vbs"
 		os.system("taskkill /IM python.exe /F & " + filename)
