@@ -1,7 +1,7 @@
 import requests
 import subprocess
 import getpass
-import os
+import os, sys
 def Request(url):
 	url = url.replace("#","")
 	return requests.get(url).text
@@ -28,10 +28,10 @@ def Install_Module(module):
 	else:
 		install = module
 
-	sub = subprocess.Popen(["\\".join(os.path.abspath(__file__).split("\\")[:-2]) + "\\" + "python.exe","-m","pip","install",install],shell=True,stderr=subprocess.PIPE,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+	sub = subprocess.Popen([os.path.dirname(os.path.abspath(sys.argv[0])) + "\\" + "python.exe","-m","pip","install",install],shell=True,stderr=subprocess.PIPE,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
 	output, error = sub.communicate()
 	try:
-		subprocess.check_call(["\\".join(os.path.abspath(__file__).split("\\")[:-2]) + "\\" + "python.exe" , "-c" , 'import '+ module])
+		subprocess.check_call([os.path.dirname(os.path.abspath(sys.argv[0])) + "\\" + "python.exe" , "-c" , 'import '+ module])
 		return True
 	except Exception as ex:
 		return error
