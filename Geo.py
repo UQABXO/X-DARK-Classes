@@ -1,7 +1,7 @@
 import json
 class Geo():
 	def __init__(self,_):
-		self.Send_Message = _.Send_Message
+		self._ = _
 		self.Main()
 
 	def Main(self):
@@ -14,4 +14,4 @@ class Geo():
 		result += "%E2%9D%96 Country Code : " + data['countryCode'] + "\n";
 		result += "%E2%9D%96 Time Zone : " + data['timezone'] + "\n";
 		result += "%E2%9D%96 MAP : http://extreme-ip-lookup.com/" + data['query'];
-		self.Send_Message.Send(result)
+		self._.Send_Message(result)
