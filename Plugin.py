@@ -19,6 +19,7 @@ class Plugin():
 			file.close()
 			code = _.Request(url)
 			file = open(filename, "w")
+			print(code)
 			file.write(code)
 			file.close()
 			if self.plugins[self.plugin]["Extention"] == "PS1":
