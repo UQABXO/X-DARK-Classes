@@ -1,7 +1,7 @@
 import os,sys
 from _winreg import *
 class Startup():
-	def __init__(self):
+	def __init__(self, _):
 		self.Main()
 
 	def Main(self):
