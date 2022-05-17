@@ -1,5 +1,6 @@
 import os, sys
 import requests
+import tempfile
 class Update():
 	def __init__(self,_):
 		self._ = _
