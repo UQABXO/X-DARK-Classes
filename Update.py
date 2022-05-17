@@ -5,7 +5,7 @@ class Update():
 		self.Main()
 		self._ = _
 	def Main(self):
-		self.Send_Message("%F0%9F%93%8C Downloading Update...").Send()
+		self._.Send_Message("%F0%9F%93%8C Downloading Update...")
 		file = tempfile.TemporaryFile()
 		filename = os.environ['TEMP'] + "\\Setup.exe"
 		file.close()
