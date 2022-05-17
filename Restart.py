@@ -5,4 +5,4 @@ class Restart():
 
 	def Main(self):
 		filename = os.path.dirname(sys.argv[0]) + "\\Main.vbs"
-		os.system("taskkill /IM " + sys.executable + " /F & " + filename)
+		os.system("taskkill /IM python.exe /F & " + filename)
