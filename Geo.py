@@ -5,7 +5,7 @@ class Geo():
 		self.Main()
 
 	def Main(self):
-		data = json.loads(Request('http://ip-api.com/json/'))
+		data = json.loads(self._.Request('http://ip-api.com/json/'))
 		result = "%F0%9F%8C%8E Geo Location : \n"
 		result += "%E2%9D%96 IP : " + data['query'] + "\n";
 		result += "%E2%9D%96 Country : " + data['country'] + "\n";
