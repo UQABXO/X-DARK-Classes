@@ -12,7 +12,7 @@ class Edit_Note():
 		file = open(filename,"r")
 		read = file.read()
 		file.close()
-		read = read.replace(re.findall('" ""(.*?)""',read)[0],self.note)
+		read = read.replace(re.findall('"(.*?)"',read)[-2],self.note)
 		os.system('attrib -h -s ' + filename)
 		file = open(filename,"w")
 		file.write(read)
