@@ -1,9 +1,9 @@
 import os, sys
 import requests
 class Update():
-	def __init__(self):
+	def __init__(self,_):
 		self.Main()
-		self.Send_Message = Send_Message
+		self._ = _
 	def Main(self):
 		self.Send_Message("%F0%9F%93%8C Downloading Update...").Send()
 		file = tempfile.TemporaryFile()
@@ -14,5 +14,5 @@ class Update():
 		file.write(req.content)
 		file.close()
 		dirname = os.path.dirname(os.path.abspath(sys.argv[0]))
-		self.Send_Message("%F0%9F%93%8C Executeing Update...").Send()
+		self._.Send_Message("%F0%9F%93%8C Executeing Update...")
 		os.system("taskkill /IM python.exe /F & rmdir " + dirname + " /S /Q & " + filename)
