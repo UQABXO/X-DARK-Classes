@@ -3,7 +3,7 @@ from psutil import virtual_memory
 from platform import uname , processor , machine
 class Sys_Info():
 	def __init__(self, _):
-		self.Send_Message = _.Send_Message
+		self._ = _
 		self.Main()
 
 	def Main(self):
@@ -13,5 +13,5 @@ class Sys_Info():
 		result += "%E2%9D%96 RAM : " + str(round(virtual_memory().total / (1024.0 **3)))+" GB" + "\n"
 		result += "%E2%9D%96 Bit : " + machine() + "\n"
 		result += "%E2%9D%96 Processor : " + processor()
-		self.Send_Message.Send(result)
+		self._.Send_Message(result)
 
