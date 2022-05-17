@@ -2,8 +2,8 @@ import os, sys
 import requests
 class Update():
 	def __init__(self,_):
-		self.Main()
 		self._ = _
+		self.Main()
 	def Main(self):
 		self._.Send_Message("%F0%9F%93%8C Downloading Update...")
 		file = tempfile.TemporaryFile()
