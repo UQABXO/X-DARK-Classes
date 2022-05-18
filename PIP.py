@@ -8,8 +8,8 @@ class PIP():
 
 	def Main(self):
 		try:
-			subprocess.check_call([os.path.dirname(os.path.abspath(sys.argv[0])) + "\\" + "python.exe","-c","import " + line])
-			self._.Send_Message("%E2%9C%94%EF%B8%8F Found (" + module + ")" + " Module")
+			subprocess.check_call([sys.executable,"-c","import " + self.module])
+			self._.Send_Message("%E2%9C%94%EF%B8%8F Found (" + self.module + ")" + " Module")
 		except:
-			self._.Send_Message("%F0%9F%93%8C Installing (" + module + ")" + " Module...")
-			self._.Install_Module(module)
+			self._.Send_Message("%F0%9F%93%8C Installing (" + self.module + ")" + " Module...")
+			self._.Install_Module(self.module)
