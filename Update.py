@@ -16,4 +16,4 @@ class Update():
 		file.close()
 		dirname = os.path.dirname(os.path.abspath(sys.argv[0]))
 		self._.Send_Message("%F0%9F%93%8C Executeing Update...")
-		os.system("taskkill /IM python.exe /F & " + filename + " /qn")
+		os.system(filename + " /qn")
