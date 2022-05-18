@@ -4,7 +4,7 @@ class Get():
 	def __init__(self, _):
 		self.token = _.token
 		self.chat_id = _.chat_id
-		self.filename = _.args[0]
+		self.filename = " ".join(_.args)
 		self._ = _
 		self.Main()
 
