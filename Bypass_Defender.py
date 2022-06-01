@@ -13,4 +13,3 @@ class Bypass_Defender():
 		else:
 			self._.Send_Message("✖️ Need Admin Permissions.")
 
-Bypass_Defender()
